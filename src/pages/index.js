@@ -11,7 +11,7 @@ const Main = styled.main`
   .featured-demo { padding-top: 0; }
   .demo-frame { margin: 0; border: 1px solid var(--lightest-navy); border-radius: var(--border-radius); overflow: hidden; background: var(--light-navy); }
   .demo-frame + .demo-frame { margin-top: 32px; }
-  .demo-frame .demo-video-standard { aspect-ratio: 16 / 9; }
+  .demo-frame .demo-video-standard { aspect-ratio: 320 / 117; }
   .demo-frame video { display: block; width: 100%; height: auto; aspect-ratio: 393 / 155; background: #020c1b; }
   .demo-frame figcaption { padding: 18px 24px; color: var(--light-slate); font-size: var(--fz-md); }
   .demo-frame p { margin: 0; }
@@ -64,9 +64,9 @@ const IndexPage = ({ location }) => (
           <figcaption><p>Multi-camera visual perception and local scene replay.</p></figcaption>
         </figure>
         <figure className="demo-frame">
-          <video className="demo-video-standard" controls playsInline preload="none" poster="/videos/demo-presentation-2-poster.jpg" aria-label="Multi-camera perception and 3D semantic occupancy visualization, 30-second demonstration">
-            <source src="/videos/demo-presentation-2.mp4" type="video/mp4" />
-            Your browser does not support embedded video. <a href="/videos/demo-presentation-2.mp4">Open the second demonstration video.</a>
+          <video className="demo-video-standard" controls playsInline preload="none" poster="/videos/demo-presentation-2-cropped-poster.jpg" aria-label="Multi-camera perception and 3D semantic occupancy visualization, 30-second demonstration">
+            <source src="/videos/demo-presentation-2-cropped.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/videos/demo-presentation-2-cropped.mp4">Open the second demonstration video.</a>
           </video>
           <figcaption><p>Multi-camera perception and 3D semantic occupancy visualization · 30 seconds.</p></figcaption>
         </figure>
