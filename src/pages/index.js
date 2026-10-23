@@ -113,7 +113,7 @@ const IndexPage = ({ location }) => (
       </section>
       <section id="contact" className="contact">
         <h2 className="numbered-heading">Get In Touch</h2>
-        <p>I’m interested in internship opportunities in visual perception, autonomous driving, machine learning, and software development. For opportunities and collaboration, please reach out.</p>
+        <p>I’m interested in internship opportunities and full-time opportunities in visual perception, autonomous driving, machine learning, and software development. For opportunities and collaboration, please reach out.</p>
         <a className="button" href={`mailto:${profile.email}`}>{profile.email}</a>
         <div className="contact-socials" aria-label="Professional profiles">
           <a href={profile.github} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconGitHub /></span><span>GitHub</span></a>
