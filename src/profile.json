@@ -1,0 +1,174 @@
+{
+  "name": "Taozhe Li",
+  "headline": "Perception. Autonomy. Real-world systems.",
+  "intro": "I’m a Computer Science Ph.D. student at the University of Oklahoma, working on visual perception, end-to-end autonomous driving, and SLAM. I build learning-based systems in Python and C++, and optimize models for deployment on NVIDIA platforms.",
+  "email": "Taozhe.Li-1@ou.edu",
+  "github": "https://github.com/TaozheLi",
+  "linkedin": "https://www.linkedin.com/in/taozhe-li-44011828a/",
+  "skills": [
+    "Python",
+    "C++",
+    "PyTorch",
+    "TensorFlow",
+    "OpenCV",
+    "CUDA",
+    "ONNX",
+    "NumPy",
+    "Pandas",
+    "Git"
+  ],
+  "education": [
+    {
+      "institution": "University of Oklahoma",
+      "degree": "Ph.D. in Computer Science",
+      "dates": "Feb. 2023 – Dec. 2027 (expected)",
+      "location": "Norman, Oklahoma"
+    },
+    {
+      "institution": "Hunan University of Technology",
+      "degree": "B.S. in Computer Science",
+      "dates": "Sept. 2018 – June 2022",
+      "location": "China"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Research Assistant",
+      "organization": "University of Oklahoma",
+      "dates": "Feb. 2023 – Present",
+      "description": "Research in dynamic SLAM, camera-based autonomous driving, and visual perception. Work includes dataset collection, multi-sensor calibration, model deployment on NVIDIA boards, and CUDA optimization."
+    },
+    {
+      "role": "Visual Perception Intern",
+      "organization": "NetEase",
+      "dates": "Mar. 2022 – June 2022",
+      "description": "Cleaned training and evaluation data, trained object detection models, and deployed them on robots for detection and localization. Improved model efficiency by 37.3% with less than 1% loss in accuracy, using Python, PyTorch, OpenCV, C++, and ONNX."
+    },
+    {
+      "role": "Teaching Assistant",
+      "organization": "University of Oklahoma",
+      "dates": "2025 – 2026",
+      "description": "Flight Mechanics (AME3333, Spring 2025), Statics (AME2113, Fall 2025), and Robotics Lab (AME4802, Spring 2026)."
+    }
+  ],
+  "projects": [
+    {
+      "title": "End-to-End Autonomous Driving",
+      "dates": "Nov. 2025 – Present",
+      "description": "Exploring Vision-Language-Action models and unified driving architectures for perception, scene understanding, prediction, reasoning, planning, and action generation.",
+      "contribution": "Studying and implementing architectures including UniAD, OpenEMMA, OpenDriveVLA, and DriveVLA-W0.",
+      "tech": [
+        "VLA",
+        "Autonomous Driving",
+        "Multimodal Learning"
+      ],
+      "code": "",
+      "demo": ""
+    },
+    {
+      "title": "Occupancy Prediction & BEV Detection",
+      "dates": "May 2025 – Present",
+      "description": "Built a multi-camera perception workflow spanning data collection, model evaluation, and deployment.",
+      "contribution": "Calibrated and synchronized six surround-view cameras with LiDAR, curated occupancy and BEV datasets, evaluated and modified models, and optimized inference using CUDA on Jetson AGX Orin and NVIDIA Thor.",
+      "tech": [
+        "BEV",
+        "Occupancy",
+        "CUDA",
+        "NVIDIA Jetson"
+      ],
+      "code": "",
+      "demo": ""
+    },
+    {
+      "title": "Camera-Based Driving Perception",
+      "dates": "Aug. 2024 – May 2025",
+      "description": "Developed visual perception and end-to-end driving components for a surround-camera autonomous driving system.",
+      "contribution": "Responsible for visual perception and end-to-end driving algorithms, implemented in C++ and Python.",
+      "tech": [
+        "C++",
+        "Python",
+        "Computer Vision"
+      ],
+      "code": "",
+      "demo": ""
+    },
+    {
+      "title": "Dynamic SLAM",
+      "dates": "Feb. 2023 – May 2024",
+      "description": "Addressed the degradation of traditional SLAM systems in dynamic environments.",
+      "contribution": "Implemented a machine-learning-based discriminator for dynamic and static feature points, and the complete SLAM system. Evaluated on the KITTI Tracking dataset.",
+      "tech": [
+        "SLAM",
+        "C++",
+        "PyTorch",
+        "CUDA"
+      ],
+      "code": "",
+      "demo": ""
+    },
+    {
+      "title": "YOLOv5 + DeepSORT Tracking",
+      "dates": "Jan. 2022 – June 2022",
+      "description": "Designed a pedestrian and vehicle tracking system for open-road environments.",
+      "contribution": "Combined YOLOv5 detection with DeepSORT tracking and built a PyQt5 interface. Received the Excellent Undergraduate Dissertation Award.",
+      "tech": [
+        "Python",
+        "PyTorch",
+        "PyQt5",
+        "Object Tracking"
+      ],
+      "code": "",
+      "demo": ""
+    },
+    {
+      "title": "Plant Pathology Classification",
+      "dates": "2021",
+      "description": "Used EfficientNet to solve a multi-label plant disease classification problem.",
+      "contribution": "Placed in the top 3% on the final Kaggle competition leaderboard.",
+      "tech": [
+        "EfficientNet",
+        "PyTorch",
+        "Multi-label Classification"
+      ],
+      "code": "",
+      "demo": ""
+    }
+  ],
+  "publications": [
+    {
+      "title": "Don’t let the information slip away",
+      "authors": "T. Li, G. Wang, B. Yu, Y. Liu, and W. Sun",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 8504–8513",
+      "year": "2026",
+      "summary": "",
+      "pdf": "",
+      "code": "",
+      "project": ""
+    },
+    {
+      "title": "OFEODM: An Vehicle Onboard Fast and Efficient Object Detection and Distance Prediction Model",
+      "authors": "T. Li, H. Wang, Y. Hajnorouzali, and B. Xu",
+      "venue": "WCX SAE World Congress Experience, 370157",
+      "year": "2026",
+      "summary": "",
+      "pdf": "",
+      "code": "",
+      "project": ""
+    },
+    {
+      "title": "MLP-SLAM: Multilayer Perceptron-Based Simultaneous Localization and Mapping With a Dynamic and Static Object Discriminator",
+      "authors": "T. Li and W. Sun",
+      "venue": "arXiv",
+      "year": "2024",
+      "summary": "",
+      "pdf": "",
+      "code": "https://github.com/TaozheLi/MLP-SLAM",
+      "project": ""
+    }
+  ],
+  "awards": [
+    "Robberson Travel Grant · 2026",
+    "Excellent Undergraduate Dissertation Award · 2022",
+    "Second Class Scholarship · 2019–2021 (three awards)"
+  ]
+}
