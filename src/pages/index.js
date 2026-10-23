@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import { IconGitHub, IconLinkedin } from '@components/icons';
 import profile from '../profile.json';
 
 const Main = styled.main`
@@ -26,6 +27,13 @@ const Main = styled.main`
   .links a { color: var(--green); }
   .empty { padding: 28px; border: 1px dashed var(--lightest-navy); border-radius: var(--border-radius); }
   .contact { text-align: center; max-width: 650px; }
+  .contact-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 32px; }
+  .contact-socials a { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-width: 190px; min-height: 72px; padding: 18px 28px; border: 1px solid var(--green); border-radius: var(--border-radius); background: var(--light-navy); color: var(--lightest-slate); font-size: 22px; font-weight: 600; transition: var(--transition); }
+  .contact-socials a::after { display: none; }
+  .contact-socials a:hover, .contact-socials a:focus-visible { color: var(--green); background: var(--lightest-navy); transform: translateY(-3px); box-shadow: 0 6px 22px rgba(100, 255, 218, 0.12); }
+  .contact-socials a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+  .contact-socials svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--green); }
+  @media (prefers-reduced-motion: reduce) { .contact-socials a { transition: none; } .contact-socials a:hover { transform: none; } }
   .draft { font-size: var(--fz-sm); color: var(--green); }
 `;
 
@@ -98,6 +106,10 @@ const IndexPage = ({ location }) => (
         <h2 className="numbered-heading">Get In Touch</h2>
         <p>I’m interested in internship opportunities in visual perception, autonomous driving, machine learning, and software development. For opportunities and collaboration, please reach out.</p>
         <a className="button" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <div className="contact-socials" aria-label="Professional profiles">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconGitHub /></span><span>GitHub</span></a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconLinkedin /></span><span>LinkedIn</span></a>
+        </div>
       </section>
     </Main>
   </Layout>
