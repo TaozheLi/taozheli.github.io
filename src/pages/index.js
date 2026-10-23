@@ -57,9 +57,9 @@ const IndexPage = ({ location }) => (
       <section id="demo" className="featured-demo" aria-labelledby="demo-title">
         <h2 id="demo-title" className="numbered-heading">Demo Presentation</h2>
         <figure className="demo-frame">
-          <video controls playsInline preload="none" poster="/videos/research-demo-poster.jpg" aria-label="Multi-camera visual perception and local scene replay demonstration">
-            <source src="/videos/research-demo.mp4" type="video/mp4" />
-            Your browser does not support embedded video. <a href="/videos/research-demo.mp4">Open the demonstration video.</a>
+          <video controls playsInline preload="none" poster="/videos/research-demo-blurred-poster.jpg" aria-label="Multi-camera visual perception and local scene replay demonstration">
+            <source src="/videos/research-demo-blurred.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/videos/research-demo-blurred.mp4">Open the demonstration video.</a>
           </video>
           <figcaption><p>Multi-camera visual perception and local scene replay.</p></figcaption>
         </figure>
