@@ -7,6 +7,11 @@ import profile from '../profile.json';
 const Main = styled.main`
   counter-reset: section;
   .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .featured-demo { padding-top: 0; }
+  .demo-frame { margin: 0; border: 1px solid var(--lightest-navy); border-radius: var(--border-radius); overflow: hidden; background: var(--light-navy); }
+  .demo-frame video { display: block; width: 100%; height: auto; aspect-ratio: 393 / 155; background: #020c1b; }
+  .demo-frame figcaption { padding: 18px 24px; color: var(--light-slate); font-size: var(--fz-md); }
+  .demo-frame p { margin: 0; }
   .eyebrow { color: var(--green); font-family: var(--font-mono); }
   .hero h1 { margin: 15px 0; }
   .hero h2 { font-size: clamp(28px, 5vw, 60px); color: var(--slate); }
@@ -38,6 +43,16 @@ const IndexPage = ({ location }) => (
         <p>{profile.intro}</p>
         {profile.intro.startsWith('Personal website in preparation') && <p className="draft">Draft portfolio · Personal details pending</p>}
         <a className="button" href="#projects">Explore my work</a>
+      </section>
+      <section id="demo" className="featured-demo" aria-labelledby="demo-title">
+        <h2 id="demo-title" className="numbered-heading">Perception in Action</h2>
+        <figure className="demo-frame">
+          <video controls playsInline preload="none" poster="/videos/research-demo-poster.jpg" aria-label="Multi-camera visual perception and local scene replay demonstration">
+            <source src="/videos/research-demo.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/videos/research-demo.mp4">Open the demonstration video.</a>
+          </video>
+          <figcaption><p>Multi-camera visual perception and local scene replay.</p></figcaption>
+        </figure>
       </section>
       <section id="about">
         <h2 className="numbered-heading">About Me</h2>
