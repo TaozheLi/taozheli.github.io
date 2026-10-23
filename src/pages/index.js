@@ -45,7 +45,7 @@ const IndexPage = ({ location }) => (
         <a className="button" href="#projects">Explore my work</a>
       </section>
       <section id="demo" className="featured-demo" aria-labelledby="demo-title">
-        <h2 id="demo-title" className="numbered-heading">Perception in Action</h2>
+        <h2 id="demo-title" className="numbered-heading">Demo Presentation</h2>
         <figure className="demo-frame">
           <video controls playsInline preload="none" poster="/videos/research-demo-poster.jpg" aria-label="Multi-camera visual perception and local scene replay demonstration">
             <source src="/videos/research-demo.mp4" type="video/mp4" />
