@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Layout } from '@components';
-import { IconGitHub, IconLinkedin } from '@components/icons';
+import { IconLinkedin } from '@components/icons';
 import profile from '../profile.json';
 
 const Main = styled.main`
@@ -116,7 +116,6 @@ const IndexPage = ({ location }) => (
         <p>I’m interested in internship opportunities and full-time opportunities in visual perception, autonomous driving, machine learning, and software development. For opportunities and collaboration, please reach out.</p>
         <a className="button" href={`mailto:${profile.email}`}>{profile.email}</a>
         <div className="contact-socials" aria-label="Professional profiles">
-          <a href={profile.github} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconGitHub /></span><span>GitHub</span></a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconLinkedin /></span><span>LinkedIn</span></a>
         </div>
       </section>
