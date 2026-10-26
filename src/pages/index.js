@@ -28,27 +28,19 @@ const Main = styled.main`
   .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
   .links a { color: var(--green); }
   .empty { padding: 28px; border: 1px dashed var(--lightest-navy); border-radius: var(--border-radius); }
-  .contact { text-align: center; max-width: 650px; }
-  .contact-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 32px; }
-  .contact-socials a { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-width: 190px; min-height: 72px; padding: 18px 28px; border: 1px solid var(--green); border-radius: var(--border-radius); background: var(--light-navy); color: var(--lightest-slate); font-size: 22px; font-weight: 600; transition: var(--transition); }
-  .contact-socials a::after { display: none; }
-  .contact-socials a:hover, .contact-socials a:focus-visible { color: var(--green); background: var(--lightest-navy); transform: translateY(-3px); box-shadow: 0 6px 22px rgba(100, 255, 218, 0.12); }
-  .contact-socials a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
-  .contact-socials svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--green); }
-  @media (prefers-reduced-motion: reduce) { .contact-socials a { transition: none; } .contact-socials a:hover { transform: none; } }
+  .contact { max-width: 1000px; text-align: left; }
+  .contact > p { max-width: 650px; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 32px; }
+  .contact-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: 300px; max-width: 100%; min-height: 64px; padding: 16px 18px; border: 1px solid var(--green); border-radius: var(--border-radius); background: var(--light-navy); color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); line-height: 1.4; transition: var(--transition); }
+  .contact-actions a::after { display: none; }
+  .contact-actions a:hover, .contact-actions a:focus-visible { background: var(--lightest-navy); }
+  .contact-actions a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+  .contact-actions svg { display: block; width: 22px; height: 22px; flex-shrink: 0; }
   .publication-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 30px; }
   .publication-header .numbered-heading { margin-bottom: 0; }
   .scholar-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid var(--green); border-radius: var(--border-radius); color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); }
   .scholar-link:hover, .scholar-link:focus-visible { background: var(--light-navy); }
   .scholar-link::after { display: none; }
-  .visitor-section { padding-top: 0; }
-  .visitor-panel { padding: 24px; background: var(--light-navy); border: 1px solid var(--lightest-navy); border-radius: var(--border-radius); }
-  .visitor-map-link { display: block; width: 100%; }
-  .visitor-map-link::after { display: none; }
-  .visitor-map-link img { display: block; width: 100%; height: auto; border-radius: var(--border-radius); }
-  .visitor-note { margin: 18px 0 0; color: var(--light-slate); font-family: var(--font-mono); font-size: var(--fz-xs); text-align: center; }
-  .visitor-note a { color: var(--green); }
-  @media (max-width: 480px) { .visitor-panel { padding: 12px; } }
   .draft { font-size: var(--fz-sm); color: var(--green); }
 `;
 
@@ -130,18 +122,9 @@ const IndexPage = ({ location }) => (
       <section id="contact" className="contact">
         <h2 className="numbered-heading">Get In Touch</h2>
         <p>I’m interested in internship opportunities and full-time opportunities in visual perception, autonomous driving, machine learning, and software development. For opportunities and collaboration, please reach out.</p>
-        <a className="button" href={`mailto:${profile.email}`}>{profile.email}</a>
-        <div className="contact-socials" aria-label="Professional profiles">
+        <div className="contact-actions" aria-label="Contact and professional profile">
+          <a href={`mailto:${profile.email}`}><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></svg><span>{profile.email}</span></a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconLinkedin /></span><span>LinkedIn</span></a>
-        </div>
-      </section>
-      <section id="visitors" className="visitor-section" aria-labelledby="visitors-title">
-        <h2 id="visitors-title" className="numbered-heading">Visitors Around the World</h2>
-        <div className="visitor-panel">
-          <a className="visitor-map-link" href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer" aria-label="View visitor map and statistics">
-            <img src="https://mapmyvisitors.com/map.png?cl=8a9eb8&amp;w=900&amp;t=tt&amp;d=FJYO2o06JlGVzPCTscXafVTAxJNfugeJ-M-ZLH9BXV4&amp;co=112240&amp;ct=ccd6f6" width="900" height="461" loading="eager" decoding="async" alt="World map showing approximate locations of visitors to this website" />
-          </a>
-          <p className="visitor-note">Approximate visitor locations · <a href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer">MapMyVisitors</a></p>
         </div>
       </section>
     </Main>
