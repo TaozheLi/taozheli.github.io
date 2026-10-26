@@ -35,7 +35,7 @@ const Main = styled.main`
   .contact-actions a::after { display: none; }
   .contact-actions a:hover, .contact-actions a:focus-visible { background: var(--lightest-navy); }
   .contact-actions a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
-  .contact-actions svg { display: block; width: 22px; height: 22px; flex-shrink: 0; }
+  .contact-actions svg { display: block; width: 22px; height: 22px; flex-shrink: 0; fill: none; stroke: currentColor; }
   .publication-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 30px; }
   .publication-header .numbered-heading { margin-bottom: 0; }
   .scholar-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid var(--green); border-radius: var(--border-radius); color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); }
