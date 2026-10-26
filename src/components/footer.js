@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   height: auto;
   position: relative;
-  min-height: 180px;
+  min-height: 70px;
   justify-content: flex-end;
   padding: 25px 100px;
   @media (max-width: 900px) { min-height: 70px; padding: 25px; }
@@ -70,16 +70,40 @@ const StyledCredit = styled.div`
 `;
 
 const StyledVisitorCorner = styled.aside`
-  position: absolute;
-  right: 100px;
-  bottom: 20px;
-  width: 220px;
+  position: static;
+  align-self: flex-end;
+  width: 660px;
+  max-width: 100%;
+  margin-top: 24px;
   a { display: block; }
   a::after { display: none; }
-  img { display: block; width: 100%; height: auto; border-radius: var(--border-radius); }
+  .map-host { width: 100%; min-height: 140px; overflow: hidden; border-radius: var(--border-radius); }
+  .map-host #mapmyvisitors-widget, .map-host .mapmyvisitors-map { max-width: 100%; }
+  .map-status { font-size: var(--fz-sm); color: var(--light-slate); }
   .map-credit { margin-top: 5px; color: var(--light-slate); font-family: var(--font-mono); font-size: 11px; text-align: right; }
   @media (max-width: 900px) { position: static; align-self: flex-end; margin-top: 24px; max-width: 100%; }
 `;
+
+const LiveVisitorMap = () => {
+  const host = useRef(null);
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    const container = host.current;
+    const script = document.createElement('script');
+    script.id = 'mapmyvisitors';
+    script.async = true;
+    script.src = 'https://mapmyvisitors.com/map.js?cl=8a9eb8&w=a&t=tt&d=FJYO2o06JlGVzPCTscXafVTAxJNfugeJ-M-ZLH9BXV4&co=112240&ct=ccd6f6&cmo=ff616c&cmn=ff616c';
+    script.onerror = () => setFailed(true);
+    container.appendChild(script);
+    return () => { container.innerHTML = ''; };
+  }, []);
+  return (
+    <>
+      <div className="map-host" ref={host} aria-label="Visitor world map" />
+      {failed && <p className="map-status">Visitor map is temporarily unavailable. Open the statistics link below.</p>}
+    </>
+  );
+};
 
 const Footer = () => {
   return (
@@ -105,9 +129,7 @@ const Footer = () => {
         </a>
       </StyledCredit>
       <StyledVisitorCorner id="visitors" aria-label="Visitor world map">
-        <a href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer" aria-label="View visitor map and statistics">
-          <img src="https://mapmyvisitors.com/map.png?cl=8a9eb8&amp;w=220&amp;t=tt&amp;d=FJYO2o06JlGVzPCTscXafVTAxJNfugeJ-M-ZLH9BXV4&amp;co=112240&amp;ct=ccd6f6" width="220" height="111" loading="eager" decoding="async" alt="Approximate visitor locations on a world map" />
-        </a>
+        <LiveVisitorMap />
         <a className="map-credit" href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer">MapMyVisitors ↗</a>
       </StyledVisitorCorner>
     </StyledFooter>
