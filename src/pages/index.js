@@ -36,6 +36,11 @@ const Main = styled.main`
   .contact-socials a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
   .contact-socials svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--green); }
   @media (prefers-reduced-motion: reduce) { .contact-socials a { transition: none; } .contact-socials a:hover { transform: none; } }
+  .publication-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 30px; }
+  .publication-header .numbered-heading { margin-bottom: 0; }
+  .scholar-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid var(--green); border-radius: var(--border-radius); color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); }
+  .scholar-link:hover, .scholar-link:focus-visible { background: var(--light-navy); }
+  .scholar-link::after { display: none; }
   .draft { font-size: var(--fz-sm); color: var(--green); }
 `;
 
@@ -99,7 +104,10 @@ const IndexPage = ({ location }) => (
         ))}</div> : <p className="empty">Project summaries, contributions, results, and code links will appear here.</p>}
       </section>
       <section id="publications">
-        <h2 className="numbered-heading">Publications</h2>
+        <div className="publication-header">
+          <h2 className="numbered-heading">Publications</h2>
+          <a className="scholar-link" href="https://scholar.google.com/citations?user=lVmYQAUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+        </div>
         {profile.publications.length ? <div className="grid">{profile.publications.map((item, i) => (
           <article key={i}>
             <p className="meta">{item.venue} · {item.year}</p><h3>{item.title}</h3><p>{item.authors}</p><p>{item.summary}</p>
