@@ -41,6 +41,14 @@ const Main = styled.main`
   .scholar-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid var(--green); border-radius: var(--border-radius); color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); }
   .scholar-link:hover, .scholar-link:focus-visible { background: var(--light-navy); }
   .scholar-link::after { display: none; }
+  .visitor-section { padding-top: 0; }
+  .visitor-panel { padding: 24px; background: var(--light-navy); border: 1px solid var(--lightest-navy); border-radius: var(--border-radius); }
+  .visitor-map-link { display: block; width: 100%; }
+  .visitor-map-link::after { display: none; }
+  .visitor-map-link img { display: block; width: 100%; height: auto; border-radius: var(--border-radius); }
+  .visitor-note { margin: 18px 0 0; color: var(--light-slate); font-family: var(--font-mono); font-size: var(--fz-xs); text-align: center; }
+  .visitor-note a { color: var(--green); }
+  @media (max-width: 480px) { .visitor-panel { padding: 12px; } }
   .draft { font-size: var(--fz-sm); color: var(--green); }
 `;
 
@@ -125,6 +133,15 @@ const IndexPage = ({ location }) => (
         <a className="button" href={`mailto:${profile.email}`}>{profile.email}</a>
         <div className="contact-socials" aria-label="Professional profiles">
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><IconLinkedin /></span><span>LinkedIn</span></a>
+        </div>
+      </section>
+      <section id="visitors" className="visitor-section" aria-labelledby="visitors-title">
+        <h2 id="visitors-title" className="numbered-heading">Visitors Around the World</h2>
+        <div className="visitor-panel">
+          <a className="visitor-map-link" href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer" aria-label="View visitor map and statistics">
+            <img src="https://mapmyvisitors.com/map.png?cl=8a9eb8&amp;w=900&amp;t=tt&amp;d=FJYO2o06JlGVzPCTscXafVTAxJNfugeJ-M-ZLH9BXV4&amp;co=112240&amp;ct=ccd6f6" width="900" height="461" loading="eager" decoding="async" alt="World map showing approximate locations of visitors to this website" />
+          </a>
+          <p className="visitor-note">Approximate visitor locations · <a href="https://mapmyvisitors.com/web/1c938" target="_blank" rel="noopener noreferrer">MapMyVisitors</a></p>
         </div>
       </section>
     </Main>
